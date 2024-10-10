@@ -1,0 +1,18 @@
+version: 4.0.65
+steps:
+  - prompt: Click on "Support" in the header.
+    commands:
+      - command: hover-text
+        text: SUPPORT
+        description: link in the header
+        action: click
+  - prompt: Assert that the support page is displayed.
+    commands:
+      - command: assert
+        expect: the support page is displayed
+  - prompt: >-
+      Verify the presence of support options or documentation.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: support options or documentation are visible
