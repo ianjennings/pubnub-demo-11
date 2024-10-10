@@ -1,0 +1,24 @@
+version: 4.0.65
+steps:
+  - prompt: Click on "Login" in the header.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: LOGIN
+        description: login link in the header
+        action: click
+  - prompt: Assert that the login page is displayed.
+    commands:
+      - command: assert
+        expect: >-
+          the login page is displayed with "Log in" and "Email address" fields
+          visible
+  - prompt: >-
+      Verify that login fields are available for user input.  # Use the content
+      of the file from the environment
+    commands:
+      - command: assert
+        expect: >-
+          the login fields "Email address" and "Password" are available for user
+          input
