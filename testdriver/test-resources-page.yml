@@ -1,0 +1,22 @@
+version: 4.0.65
+steps:
+  - prompt: Click on "Resources" in the header.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Resources
+        description: link in the header
+        action: click
+  - prompt: Assert that the resources page loads.
+    commands:
+      - command: assert
+        expect: the resources menu is visible
+  - prompt: >-
+      Verify the availability of resource materials.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: >-
+          the resources menu is visible with options like Blog, Demos, Solution
+          Briefs, Guides, Customers, eBooks, Careers, About Us
